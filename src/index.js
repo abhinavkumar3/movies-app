@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './RegisterServiceWorker';
 import Home from './screens/home/Home';
+import 'typeface-roboto';
 
 
 ReactDOM.render(
