@@ -18,13 +18,13 @@ const customStyles = {
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate (-50%, -50%)'
+        transform: 'translate(-50%, -50%)'
     }
 }
 
 const TabContainer = function (props) {
     return (
-        <Typography component="div" style={{ padding: 0 }}>
+        <Typography component="div" style={{ padding: 0 , textAlign: 'center'}}>
             {props.children}
         </Typography>
     )
@@ -40,11 +40,11 @@ class Header extends Component {
     }
 
     openModalHandler = () => {
-        this.setState({ modalIsOpen: true })
+        this.setState({ modalIsOpen: true });
     }
 
     closeModalHandler = () => {
-        this.setState({ modalIsOpen: false })
+        this.setState({ modalIsOpen: false });
     }
 
     tabChangeHandler = (event, value) => {
@@ -62,8 +62,8 @@ class Header extends Component {
                     </Button>
                 </header>
                 <Modal areaHideApp={false} isOpen={this.state.modalIsOpen} contentLabel="Login"
-                        onRequestClose={this.closeModalHandler}>
-                    <Tabs value={this.state.value} onChange={this.tabChangeHandler}>
+                        onRequestClose={this.closeModalHandler} style={customStyles} >
+                    <Tabs className="tabs" value={this.state.value} onChange={this.tabChangeHandler}>
                         <Tab label="Login"/>
                         <Tab label="Register"/>                        
                     </Tabs>
@@ -72,11 +72,13 @@ class Header extends Component {
                             <InputLabel htmlFor="username">Username</InputLabel>
                             <Input id="username" type="text" />
                         </FormControl>
-
+                        <br /><br />
                         <FormControl required>
                             <InputLabel htmlFor="password">Password</InputLabel>
                             <Input id="password" type="password" />
                         </FormControl>
+                        <br /><br />
+                        <Button variant="contained" color="primary">LOGIN</Button>
                     </TabContainer>
                 </Modal>
             </div>
